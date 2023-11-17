@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" API Task 0 - Gather Data From API """
+""" API Task 1 - Export to CSV """
 import csv
 import requests
 import sys
