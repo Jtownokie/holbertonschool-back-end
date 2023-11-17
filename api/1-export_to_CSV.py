@@ -17,12 +17,12 @@ if __name__ == '__main__':
             emp_name = user['name']
 
     with open(f'{sys.argv[1]}.csv', 'w', encoding='UTF8', newline='') as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, quoting=csv.QUOTE_ALL)
         for to_do in json_todos:
             csv_row = []
             if to_do['userId'] == int(sys.argv[1]):
-                csv_row.append(f"\"{to_do['userId']}\"")
-                csv_row.append(f"\"{emp_name}\"")
-                csv_row.append(f"\"{to_do['completed']}\"")
-                csv_row.append(f"\"{to_do['title']}\"")
+                csv_row.append(to_do['userId'])
+                csv_row.append(emp_name)
+                csv_row.append(to_do['completed'])
+                csv_row.append(to_do['title'])
                 writer.writerow(csv_row)
