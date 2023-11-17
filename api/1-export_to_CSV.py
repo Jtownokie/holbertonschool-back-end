@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
     for user in json_users:
         if user['id'] == int(sys.argv[1]):
-            emp_name = user['name']
+            user_name = user['username']
 
     with open(f'{sys.argv[1]}.csv', 'w', encoding='UTF8', newline='') as f:
         writer = csv.writer(f, quoting=csv.QUOTE_ALL)
@@ -22,7 +22,7 @@ if __name__ == '__main__':
             csv_row = []
             if to_do['userId'] == int(sys.argv[1]):
                 csv_row.append(to_do['userId'])
-                csv_row.append(emp_name)
+                csv_row.append(user_name)
                 csv_row.append(to_do['completed'])
                 csv_row.append(to_do['title'])
                 writer.writerow(csv_row)
