@@ -21,8 +21,8 @@ if __name__ == '__main__':
         for to_do in json_todos:
             csv_row = []
             if to_do['userId'] == int(sys.argv[1]):
-                csv_row.append(str(to_do['userId']))
-                csv_row.append(str(emp_name))
-                csv_row.append(str(to_do['completed']))
-                csv_row.append(str(to_do['title']))
+                csv_row.append(f"\"{to_do['userId']}\"")
+                csv_row.append(f"\"{emp_name}\"")
+                csv_row.append(f"\"{to_do['completed']}\"")
+                csv_row.append(f"\"{to_do['title']}\"")
                 writer.writerow(csv_row)
